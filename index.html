@@ -1,0 +1,12 @@
+function unlock(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault()
+
+  if (password === '1301') {
+    sessionStorage.setItem('case-access', 'granted')
+    void navigate({ to: '/evidence' })
+    return
+  }
+
+  setDenied(true)
+  setPassword('')
+}
